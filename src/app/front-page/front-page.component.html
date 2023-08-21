@@ -1,6 +1,5 @@
 <p>front-page works!</p>
-<div class="item-container" *ngFor="let item of todo_list;">
-    <p>{{item}}</p>
-    <!-- TODO: Need to pass each item to todo-item component to print correctly -->
-    <todo-item></todo-item>
+<div class="item-container" *ngFor="let item of user_todo_list; index as i">
+    <!-- TODO: Create functionality to delete items from the TODO list -->
+    <todo-item [item]=item [index]=i id=i></todo-item>
 </div>
