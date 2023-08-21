@@ -1,7 +1,8 @@
 div {
     display: flex;
     justify-content: space-between;
-    margin: auto 30% auto 30%;
+    margin: auto 30% 1% 30%;
     border: solid black 1px;
     border-radius: 15px;
+    padding: 10px;
 }
