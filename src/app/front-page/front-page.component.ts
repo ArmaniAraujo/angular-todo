@@ -20,12 +20,14 @@ import { Component } from '@angular/core';
 
 
 let todo_list: string[] | null
-let temp = ['list item 1', 'list item 2', 'list item 3']
-sessionStorage.setItem('todo_list', JSON.stringify(temp))
+// let temp = ['list item 1', 'list item 2', 'list item 3']
+// sessionStorage.setItem('todo_list', JSON.stringify(temp))
 
 let retrievedJSON = sessionStorage.getItem('todo_list')
 if (retrievedJSON != null)
   todo_list = JSON.parse(retrievedJSON)
+
+
 
 @Component({
   selector: 'front-page',
@@ -36,4 +38,11 @@ if (retrievedJSON != null)
 
 export class FrontPageComponent {
   user_todo_list = todo_list;
+
+  loadFakeItems() {
+    let temp = ['list item 1', 'list item 2', 'list item 3']
+    sessionStorage.setItem('todo_list', JSON.stringify(temp))
+    window.location.reload()
+  }
+  
 }
