@@ -6,3 +6,8 @@ div {
     border-radius: 15px;
     padding: 10px;
 }
+
+div {
+    background-color: rgb(40, 40, 40);
+    color: white;
+}
