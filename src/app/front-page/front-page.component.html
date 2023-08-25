@@ -1,5 +1,25 @@
 <p>front-page works!</p>
+<button (click)="loadFakeItems()">RELOAD ALL ITEMS</button>
+<app-add-item-input></app-add-item-input>
 <div class="item-container" *ngFor="let item of user_todo_list; index as i">
-    <!-- TODO: Create functionality to delete items from the TODO list -->
+    <!-- TODO: Create functionality to delete items from the TODO list 
+    
+        1. Put id numbers for each item
+        2. Delete item from LOCAL storage
+        3. Write LOCAL array to sessionStorage
+        4. Re-render sessionStorage content
+    
+    // Done
+    
+
+    TODO: Create Add Task input bar and enter to add item
+    // Done
+
+    TODO: Change sessionStorage to cookie storage instead
+
+    TODO: Add Clear all items button
+    -->
     <todo-item [item]=item [index]=i id=i></todo-item>
+
+
 </div>
