@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -15,29 +16,27 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export class TodoItemComponent {
 
+  cookieService = inject(CookieService)
+
   @Input() item = ''
   @Input() index: number = -1
   
   deleteItem(index: number) {
 
     let todo_list: string[] | null = []
-    let retrievedJSON = sessionStorage.getItem('todo_list')
+    let retrievedJSON = this.cookieService.get('todo_list')
     if (retrievedJSON != null)
       todo_list = JSON.parse(retrievedJSON)
       if (todo_list !== null) {
-        // alert((todo_list[index]))
         todo_list.splice(index, 1)
         
         // Writing new array with removed element back to sessionStorage
-        sessionStorage.setItem('todo_list', JSON.stringify(todo_list))
+        this.cookieService.set('todo_list', JSON.stringify(todo_list))
 
         // Reloading page to load updated items in
         window.location.reload()
+
       }
   }
 
-  add_item(item: string) {
-
-  }
-  
 }
