@@ -18,7 +18,24 @@
     TODO: Change sessionStorage to cookie storage instead
 
     TODO: Add Clear all items button
-    -->
+    TODO: How do constructors work? for example: 
+
+    import { CookieService } from 'ngx-cookie-service';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'my-component',
+  template: `<h1>Hello World</h1>`,
+  providers: [CookieService],
+})
+export class HelloComponent {
+  constructor(private cookieService: CookieService) {
+    this.cookieService.set('Test', 'Hello World');
+    this.cookieValue = this.cookieService.get('Test');
+  }
+}
+    
+-->
     <todo-item [item]=item [index]=i id=i></todo-item>
 
 
