@@ -1,33 +1,8 @@
-import { Component } from '@angular/core';
-
-/**
- * Phase 1
- * 
- * 1. Retrieve any lists from session
- * 2. If null, return nothing
- * 3. If not null, 
- *        parse from JSON to list
- *        return list
- * 
- * 
- * 
- * Phase 2
- * 1. Create new input and save buttons
-
-
-
-*/
+import { Component, inject } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 
 let todo_list: string[] | null
-// let temp = ['list item 1', 'list item 2', 'list item 3']
-// sessionStorage.setItem('todo_list', JSON.stringify(temp))
-
-let retrievedJSON = sessionStorage.getItem('todo_list')
-if (retrievedJSON != null)
-  todo_list = JSON.parse(retrievedJSON)
-
-
 
 @Component({
   selector: 'front-page',
@@ -37,12 +12,25 @@ if (retrievedJSON != null)
 })
 
 export class FrontPageComponent {
+  
+  cookieService = inject(CookieService);
+
   user_todo_list = todo_list;
 
+  constructor() { this.loadItems() }
+
   loadFakeItems() {
-    let temp = ['list item 1', 'list item 2', 'list item 3']
-    sessionStorage.setItem('todo_list', JSON.stringify(temp))
-    window.location.reload()
+    let temp = ['list item C', 'list item B', 'list item A']
+    this.cookieService.set('todo_list', JSON.stringify(temp))    
+    this.loadItems()
   }
-  
+
+  loadItems() {
+    let retrievedJSON = this.cookieService.get('todo_list')
+    if (retrievedJSON != null)
+      todo_list = JSON.parse(retrievedJSON)
+
+    // Reassigning user_todo_list to have updated todo_list
+    this.user_todo_list = todo_list
+  }
 }
