@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-add-item-input',
@@ -6,23 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-item-input.component.css']
 })
 export class AddItemInputComponent {
-
+  
+  cookieService = inject(CookieService);
   newItem: string = ''
   
   addItem() {
 
     let todo_list: string[] | null = []
     
-    let retrievedJSON = sessionStorage.getItem('todo_list')
+    let retrievedJSON = this.cookieService.get('todo_list')
     if (retrievedJSON !== null)
       todo_list = JSON.parse(retrievedJSON)
 
     if (todo_list !== null && this.newItem !== '') {
       todo_list = [...todo_list, this.newItem]
-      sessionStorage.setItem('todo_list', JSON.stringify(todo_list))
+      this.cookieService.set('todo_list', JSON.stringify(todo_list))
       this.newItem = ''
       window.location.reload()
     }
   }
-
 }
+
