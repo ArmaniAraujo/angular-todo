@@ -3,3 +3,4 @@ frontend/.angular/16.2.0
 *.DS_Store
 backend/Users.sql
 *.sql
+backend/.idea/workspace.xml
