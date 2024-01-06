@@ -22,3 +22,4 @@ Alternatively, you can just create your own Users and Todos database, do yo than
 
 1. Install NPM - https://nodejs.org/en/download
 2. Install Angular - https://angular.io/guide/setup-local
+3. Run ```npm install```
