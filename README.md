@@ -17,3 +17,8 @@ CREATE TABLE Users (
 );
 ```
 Alternatively, you can just create your own Users and Todos database, do yo thang bud!
+
+# Workspace Setup
+
+1. Install NPM - https://nodejs.org/en/download
+2. Install Angular - https://angular.io/guide/setup-local
