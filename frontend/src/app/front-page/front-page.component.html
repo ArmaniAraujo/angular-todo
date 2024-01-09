@@ -1,26 +1,32 @@
 <p>front-page works!</p>
-<button (click)="loadFakeItems()">RELOAD ALL ITEMS</button>
-<add-item-input></add-item-input>
+<!--<button (click)="loadFakeItems()">RELOAD ALL ITEMS</button>-->
+<!--<add-item-input></add-item-input>-->
+
+<auth-content></auth-content>
+
 <div class="item-container" *ngFor="let item of user_todo_list; index as i">
   <todo-item [item]=item [index]=i id=i></todo-item>
 </div>
-    <!-- TODO: Create functionality to delete items from the TODO list 
-    
+
+<login-page></login-page>
+    <!-- TODO: Create functionality to delete items from the TODO list
+
         1. Put id numbers for each item
         2. Delete item from LOCAL storage
         3. Write LOCAL array to sessionStorage
         4. Re-render sessionStorage content
-    
+
     // Done
-    
+
 
     TODO: Create Add Task input bar and enter to add item
     // Done
 
-    TODO: Change sessionStorage to cookie storage instead
-
+    TODO: Make user login page
+    TODO: Move storage to db
+    TODO: Textbox/Button to add todos
     TODO: Add Clear all items button
-    TODO: How do constructors work? for example: 
+    TODO: How do constructors work? for example:
 
     import { CookieService } from 'ngx-cookie-service';
 import { Component } from '@angular/core';
@@ -36,6 +42,5 @@ export class HelloComponent {
     this.cookieValue = this.cookieService.get('Test');
   }
 }
-    
+
 -->
-    
