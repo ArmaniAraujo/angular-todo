@@ -11,18 +11,19 @@ let todo_list: string[] | null
 })
 
 export class FrontPageComponent {
-  
+
   cookieService = inject(CookieService);
   user_todo_list = todo_list;
 
-  constructor() { 
-    // this.loadFakeItems()
-    this.loadItems() 
+  constructor() {
+
+    // this.loadFakeItems() // TODO: Run only first time to generate fake items for testing
+    this.loadItems()
   }
 
   loadFakeItems() {
     let temp = ['list item C', 'list item B', 'list item A']
-    this.cookieService.set('todo_list', JSON.stringify(temp))    
+    this.cookieService.set('todo_list', JSON.stringify(temp))
     this.loadItems()
   }
 
