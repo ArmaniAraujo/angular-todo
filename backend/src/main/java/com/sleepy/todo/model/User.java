@@ -91,15 +91,13 @@
 
 package com.sleepy.todo.model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import java.io.Serializable;
-import jakarta.persistence.Id;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 @Data
 @AllArgsConstructor
@@ -107,17 +105,23 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="Users")
 public class User implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
+
     private String name;
+
+    @Id
+    @Column(nullable = false)
     private String username;
+
+    @Column(nullable = false)
+    private String hashed_password;
+
+    @Column(nullable = false)
+    private String salt;
+
     private String email;
     private String userImage;
 
-    public Long getId() {
-        return id;
-    }
 
 //    public User() {}
 
@@ -129,9 +133,6 @@ public class User implements Serializable {
 //        this.userImage = userImage;
 //    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -168,7 +169,6 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
