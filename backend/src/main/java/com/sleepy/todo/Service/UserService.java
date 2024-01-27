@@ -17,11 +17,14 @@ public class UserService {
         return userRepo.findAll();
     }
 
-    public User findUser(Long id) {
-        return userRepo.findById(id).orElse(null);
+    public User findUserByUsername(String username) {
+        return userRepo.findByUsername(username);
+        // TODO: Check if it returns null or not
     }
 
     public User findUserByEmail(String email) {
         return userRepo.findByEmail(email);
     }
+
+
 }
