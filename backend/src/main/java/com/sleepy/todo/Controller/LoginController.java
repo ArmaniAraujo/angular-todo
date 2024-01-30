@@ -3,15 +3,18 @@ package com.sleepy.todo.Controller;
 import com.sleepy.todo.Service.UserService;
 import com.sleepy.todo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Base64;
 
 @RestController
-@RequestMapping("api/todo/login") // I dont get this
+@RequestMapping("/api/todo/login") // I dont get this
 public class LoginController {
+
+    @Autowired
+    private final UserService us;
 
     /**
      * need username + password
@@ -32,6 +35,10 @@ public class LoginController {
 
     private UserService userService;
 
+    public LoginController(UserService us) {
+        this.us = us;
+    }
+
 //    @RequestMapping("api/todo/login/auth/{username}/{password}")
 //    public User authenticateUser (@PathVariable String username, @PathVariable String password) {
 //        User user = userService.findUserByUsername(username);
@@ -48,26 +55,29 @@ public class LoginController {
 //        return null;
 //    }
 
-    @GetMapping("api/todo/login/auth/")
-    public User getResource(@RequestHeader("Authorization") String authorizationHeader ) {
+    @GetMapping("/auth")
+    public String getResource(@RequestHeader("Authorization") String authorizationHeader ) {
         String base64Credentials = authorizationHeader.substring("Basic".length()).trim();
         String credentials = new String(Base64.getDecoder().decode(base64Credentials));
         final String[] values = credentials.split(":", 2);
         String username = values[0];
         String password = values[1];
 
-        User user = userService.findUserByUsername(username);
+
+        User user = us.findUserByUsername(username);
+        // TODO: Handle if user DNE (although I suppose this should be done in the Repo idk yet)
 
         // If a user with that username exists, move on to logging in
         if (user != null) {
-            String attemptPassword = new BCryptPasswordEncoder().encode(user.getSalt() + password);
+            String salt = user.getSalt();
+            String attemptPassword = new BCryptPasswordEncoder().encode(password+salt);
 
-            if (attemptPassword.equals(user.getHashed_password())) {
-                return user;
+            if (BCrypt.checkpw(password+salt, user.getHashed_password())) {
+                return user.toString();
             }
             // we return null at the end anyways
         }
-        return null;
+        return "Username or password incorrect. Please try again";
 
     }
 }
