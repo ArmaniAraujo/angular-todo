@@ -93,11 +93,10 @@ package com.sleepy.todo.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import lombok.Data;
 import java.io.Serializable;
-
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 @Data
 @AllArgsConstructor
