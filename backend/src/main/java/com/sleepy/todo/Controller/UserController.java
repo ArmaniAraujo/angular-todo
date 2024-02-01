@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/todo") // I dont get this
+@RequestMapping("/api/todo")
 public class UserController {
 
     @Autowired
