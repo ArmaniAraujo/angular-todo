@@ -7,10 +7,7 @@ import com.sleepy.todo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Base64;
 import java.util.HashMap;
@@ -36,8 +33,11 @@ public class AuthController {
      * @param authorizationHeader
      * @return User object from db
      */
+
     @GetMapping("/auth")
+    @CrossOrigin(origins="http://localhost:4200")
     public Map<Object, Object> authenticateUser(@RequestHeader("Authorization") String authorizationHeader ) {
+        System.out.println("Received request from frontend...");
         // Method exists in UserService
         Map<Object, Object> usernameVerificationResponse = us.checkUsername(authorizationHeader, us);
         return usernameVerificationResponse;
