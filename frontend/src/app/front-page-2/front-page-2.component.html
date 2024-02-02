@@ -1,0 +1,52 @@
+<section class="vh-100 text-bg-light" style="background-color: #1a1a1a !important;">
+  <div class="container py-5 h-100" style="background-color: #1a1a1a;">
+    <div class="row d-flex justify-content-center align-items-center h-100" style="background-color: #1a1a1a;">
+      <div class="col col-lg-9 col-xl-7 ">
+        <div class="card rounded-5 bg-dark">
+          <div class="card-body p-4 bg-dark rounded-5">
+
+            <h4 class="text-center my-3 pb-3 bg-dark text-light" >To Do App</h4>
+
+            <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2 bg-dark text-light">
+              <div class="col-12 bg-dark text-light">
+                <div class="form-outline text-light">
+                  <input type="text text-light" id="form1" class="form-control" />
+                  <label class="form-label text-light" for="form1">Enter a task here</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-warning">Get tasks</button>
+              </div>
+            </form>
+
+
+            <table class="table mb-4 bg-dark">
+              <thead class="bg-dark">
+                <tr>
+                  <th scope="col" class="bg-dark text-light text-center">No.</th>
+                  <th scope="col" class="bg-dark text-light text-center">Todo item</th>
+                  <th scope="col" class="bg-dark text-light text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="bg-dark">
+                <tr class="bg-dark" *ngFor="let item of fakeTodoArray">
+                  <th scope="row" class="bg-dark text-light text-center">{{item.id}}</th>
+                  <td class="bg-dark text-light text-center">{{item.task}}</td>
+                  <td class="bg-dark text-light d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success ms-1">Completed</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
