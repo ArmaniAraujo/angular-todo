@@ -1,4 +1,7 @@
-<div>
-    <p>Item Details: {{ item }}</p>
-    <button (click)="deleteItem(index)">{{ index }}</button>
-</div>
+<tr class="bg-dark">
+  <th scope="row" class="bg-dark text-light text-center">{{ index }}</th>
+  <td class="bg-dark text-light text-center">Buy groceries for next week</td>
+  <td class="bg-dark text-light d-flex justify-content-center">
+    <button type="submit" class="btn btn-success ms-1">Finished</button>
+  </td>
+</tr>
