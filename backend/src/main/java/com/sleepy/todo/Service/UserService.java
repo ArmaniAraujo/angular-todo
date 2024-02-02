@@ -39,7 +39,9 @@ public class UserService {
         final String[] values = credentials.split(":", 2);
         String username = values[0];
         String password = values[1];
-
+//
+//        System.out.println("Username: " + username);
+//        System.out.println("Password: " + password);
         User user = us.findUserByUsername(username);
 
         HashMap<Object, Object> map = new HashMap<>();
