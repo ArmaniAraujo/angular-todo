@@ -1,82 +1,74 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.login-dark {
+  /*height:1000px;*/
   height: 100vh;
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background:#475d62 url(../../assets/bridge.jpg); /* Photo by Tae Fuller: https://www.pexels.com/photo/golden-gate-bridge-san-francisco-california-1141853/ */
+  background-size:cover;
+  position:relative;
 }
 
-.login-container {
-
-
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #333333;
-  border-radius: 0; /* Set border-radius to 0 for a rectangle shape */
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  width: 100%;
-  max-width: 400px;
-  padding-left: 5%;
-  padding-right: 5%;
+.login-dark form {
+  max-width:320px;
+  width:90%;
+  background-color:#1e2833;
+  padding:40px;
+  border-radius:4px;
+  transform:translate(-50%, -50%);
+  position:absolute;
+  top:50%;
+  left:50%;
+  color:#fff;
+  box-shadow:3px 3px 4px rgba(0,0,0,0.2);
 }
 
-.login-form {
-  margin: 0 auto;
+.login-dark .illustration {
+  text-align:center;
+  padding:15px 0 20px;
+  font-size:100px;
+  color:#2980ef;
 }
 
-h2 {
-  text-align: center;
-  color: #ffffff;
+.login-dark form .form-control {
+  background:none;
+  border:none;
+  border-bottom:1px solid #434a52;
+  border-radius:0;
+  box-shadow:none;
+  outline:none;
+  color:inherit;
 }
 
-label {
-  display: block;
-  margin-bottom: 8px;
-  color: #ffffff;
+.login-dark form .btn-primary {
+  background:#214a80;
+  border:none;
+  border-radius:4px;
+  padding:11px;
+  box-shadow:none;
+  margin-top:26px;
+  text-shadow:none;
+  outline:none;
 }
 
-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 16px;
-  border: 1px solid #555555;
-  border-radius: 4px;
-  background-color: #333333;
-  color: #ffffff;
+.login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+  background:#214a80;
+  outline:none;
 }
 
-button {
-  background-color: #3498db;
-  color: #ffffff;
-  padding: 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  /*width: 100%;*/
-
-  width: calc(100% - 85px); /* Set the button width to match the text boxes */
-  /* Subtracting 20px to account for padding on both sides of the text boxes */
-  margin-left: 50px; /* Add some margin to separate the button from the text boxes */
-  margin-top: 10px;
-
-  transition: width 0.2s ease-in-out; /* Add a transition effect */
-
+.login-dark form .forgot {
+  display:block;
+  text-align:center;
+  font-size:12px;
+  color:#6f7a85;
+  opacity:0.9;
+  text-decoration:none;
 }
 
-button:hover {
-  background-color: #2980b9;
+.login-dark form .forgot:hover, .login-dark form .forgot:active {
+  opacity:1;
+  text-decoration:none;
 }
 
-button:active {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Adjust the box-shadow when button is pressed */
+.login-dark form .btn-primary:active {
+  transform:translateY(1px);
 }
 
-/* Font smoothing property */
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
