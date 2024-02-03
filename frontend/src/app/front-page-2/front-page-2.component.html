@@ -33,9 +33,9 @@
                 </tr>
               </thead>
               <tbody class="bg-dark">
-                <tr class="bg-dark" *ngFor="let item of fakeTodoArray">
-                  <th scope="row" class="bg-dark text-light text-center">{{item.id}}</th>
-                  <td class="bg-dark text-light text-center">{{item.task}}</td>
+                <tr class="bg-dark" *ngFor="let item of todosArray; let i = index">
+                  <th scope="row" class="bg-dark text-light text-center">{{ i + 1 }}</th>
+                  <td class="bg-dark text-light text-center">{{item.item}}</td>
                   <td class="bg-dark text-light d-flex justify-content-center">
                     <button type="submit" class="btn btn-success ms-1">Completed</button>
                   </td>
