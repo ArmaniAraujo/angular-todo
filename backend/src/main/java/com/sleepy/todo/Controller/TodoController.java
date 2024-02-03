@@ -22,6 +22,11 @@ public class TodoController {
         return ts.getAllTodos("arm");
     }
 
+    // Not testing for other user verification right now
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/get_user_todos")
+    public List<Todo> getUserTodos(@RequestParam String user) { return ts.getAllTodos(user); }
+
     @DeleteMapping("/delete")
     public ResponseEntity<String> test_deleteTodo(@RequestParam int tid) {
         try {
