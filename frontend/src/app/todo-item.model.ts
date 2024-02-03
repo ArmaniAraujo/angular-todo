@@ -1,4 +1,5 @@
 export interface TodoItem {
-  id: number;
-  task: string;
+  tid: number;
+  uid: string;
+  item: string;
 }
