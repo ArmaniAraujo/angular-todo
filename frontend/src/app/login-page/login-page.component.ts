@@ -50,14 +50,18 @@ export class LoginPageComponent {
           }
         });
 
-        if (response.data.hasOwnProperty("errorMessage"))
+        if (response.data.hasOwnProperty("errorMessage")) {
           console.log('there has been an error')
-        else {
+          document.getElementById("errorMessage")!.innerHTML = response.data.errorMessage
+          this.loginForm.get("password")?.reset()
+
+        } else { // it worked and now we want to grab the todos
+          // actually nvm we'll do it in fontpage
           // TODO: Store user data into sessionStorage
           console.log('you can be logged in')
           console.log(response.data.user)
-          sessionStorage.setItem("user", response.data.user)
-          this.router.navigate(['/front'])
+          sessionStorage.setItem("user", JSON.stringify(response.data.user))
+          await this.router.navigate(['/front'])
 
         }
         // Handle the response from the server
