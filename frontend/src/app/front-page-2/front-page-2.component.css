@@ -1,0 +1,7 @@
+.blur-background {
+  filter: blur(5px); /* Adjust the blur radius as needed */
+}
+
+.darken-background {
+  background-color: rgba(0,0,0,0.6);
+}
