@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {Observable} from "rxjs";
 import axios from "axios";
 import {Router} from "@angular/router";
 
