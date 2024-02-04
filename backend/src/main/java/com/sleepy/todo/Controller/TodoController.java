@@ -27,6 +27,7 @@ public class TodoController {
     @GetMapping("/get_user_todos")
     public List<Todo> getUserTodos(@RequestParam String user) { return ts.getAllTodos(user); }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/delete")
     public ResponseEntity<String> test_deleteTodo(@RequestParam int tid) {
         try {
@@ -36,6 +37,7 @@ public class TodoController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/add")
     public ResponseEntity<String> addTodo(@RequestBody TodoRequest todoDetails) {
         try {
