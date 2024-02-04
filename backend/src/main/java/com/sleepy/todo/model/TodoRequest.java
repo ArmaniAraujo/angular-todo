@@ -1,5 +1,7 @@
 package com.sleepy.todo.model;
 
+// Model for adding Todos - does not need tid since its auto generated
+
 public class TodoRequest {
 
     private String uid;
