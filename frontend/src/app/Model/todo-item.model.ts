@@ -1,5 +1,5 @@
 export interface TodoItem {
-  tid: number;
+  tid?: number;
   uid: string;
   item: string;
 }
