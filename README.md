@@ -16,14 +16,15 @@ CREATE TABLE Users (
     salt			varchar(72)			NOT NULL,
     email		varchar(225),
     user_image		varchar(225)
+PRIMARY KEY (`username`)
 );
 ```
 
 ```sql
 CREATE TABLE Todos (  
-  tid 		int 		NOT NULL 	AUTO_INCREMENT,  
-  item 		varchar(255) 	NOT NULL,  
-  uid 		varchar(255) 	NOT NULL,  
+  tid 			int 		NOT NULL 	AUTO_INCREMENT,  
+  item 			varchar(255) 	NOT NULL,  
+  uid 			varchar(255) 	NOT NULL,  
   PRIMARY KEY (tid)  
 );
 ```
