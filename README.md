@@ -19,6 +19,7 @@ CREATE TABLE Users (
 );
 ```
 Alternatively, you can just create your own Users and Todos database, do yo thang bud!
+Note: The application does not have a create-user functionality. I just made them myself. Make them yourself too. Creating a user was not the focus of the application so meh.
 
 # Workspace Setup
 
