@@ -1,6 +1,9 @@
 # Welcome to Angular-Todo!
 Hello! This is my first (official) instruction guide for one of my application so feel free to fork it/recommend changes if you notice anything.
 
+![](https://github.com/Your_Repository_Name/Your_GIF_Name.gif)
+
+
 # Database Setup
 1. Install MySQL Server and/or MySQL Workbench
 	- https://dev.mysql.com/downloads/installer/
