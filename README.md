@@ -12,7 +12,7 @@ CREATE TABLE Users (
     id			int				UNIQUE	NOT NULL	AUTO_INCREMENT,
     name			varchar(50)			NOT NULL,
 	username		varchar(225)			NOT NULL,
-    hashed_password		varchar(72)			NOT NULL,
+    hashed_password	varchar(72)			NOT NULL,
     salt			varchar(72)			NOT NULL,
     email		varchar(225),
     user_image		varchar(225)
