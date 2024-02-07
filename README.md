@@ -16,7 +16,7 @@ CREATE TABLE Users (
     salt			varchar(72)			NOT NULL,
     email		varchar(225),
     user_image		varchar(225)
-PRIMARY KEY (`username`)
+	PRIMARY KEY (username)
 );
 ```
 
