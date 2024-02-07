@@ -1,7 +1,7 @@
 # Welcome to Angular-Todo!
 Hello! This is my first (official) instruction guide for one of my application so feel free to fork it/recommend changes if you notice anything.
 
-![](https://github.com/Your_Repository_Name/angular-todo.gif)
+![]([https://github.com/angular-todo/angular-todo.gif](https://github.com/ArmaniAraujo/angular-todo/blob/main/angular-todo.gif))
 
 
 # Database Setup
