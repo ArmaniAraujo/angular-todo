@@ -10,10 +10,12 @@ Hello! This is my first (official) instruction guide for one of my application s
  ```sql
 CREATE TABLE Users (
     id			int				UNIQUE	NOT NULL	AUTO_INCREMENT,
-    name			varchar(225)			NOT NULL,
+    name			varchar(50)			NOT NULL,
 	username		varchar(225)			NOT NULL,
+    hashed_password		varchar(72)			NOT NULL,
+    salt			varchar(72)			NOT NULL,
     email		varchar(225),
-    image		varchar(225)
+    user_image		varchar(225)
 );
 ```
 Alternatively, you can just create your own Users and Todos database, do yo thang bud!
