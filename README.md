@@ -21,7 +21,7 @@ CREATE TABLE Users (
 
 ```sql
 CREATE TABLE Todos (  
-  tid 	int 	NOT NULL 	AUTO_INCREMENT,  
+  tid 	int 		NOT NULL 	AUTO_INCREMENT,  
   item 	varchar(255) 	NOT NULL,  
   uid 	varchar(255) 	NOT NULL,  
   PRIMARY KEY (tid)  
