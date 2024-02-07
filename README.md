@@ -1,7 +1,11 @@
 # Welcome to Angular-Todo!
 Hello! This is my first (official) instruction guide for one of my application so feel free to fork it/recommend changes if you notice anything.
 
-![angular-todo](https://github.com/ArmaniAraujo/angular-todo/assets/44607139/cdcf88dc-5d45-4f69-90fe-4716859847d5)
+
+<p align="center">
+  ![angular-todo](https://github.com/ArmaniAraujo/angular-todo/assets/44607139/cdcf88dc-5d45-4f69-90fe-4716859847d5)
+</p>
+
 
 
 
